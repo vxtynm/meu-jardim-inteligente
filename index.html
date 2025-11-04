@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meu Jardim Inteligente</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#bdecb6">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <h1>🌼 Meu Jardim Inteligente</h1>
+    <div class="header-actions">
+      <button id="themeToggle" aria-label="Alternar tema">🌙</button>
+    </div>
+  </div>
+  <p class="subtitle">Tecnologia para ajudar você a conhecer e cuidar melhor das suas plantas.</p>
+</header>
+
+<main class="container">
+  <section class="intro">
+    <h2>Sobre</h2>
+    <p>"Meu Jardim Inteligente" é um aplicativo educacional para identificação e controle de cuidados de plantas. Identificação usa heurística local e fallback público (Wikipedia). Se você tiver uma chave Plant.id, cole em <code>script.js</code> na constante <code>API_KEY</code>.</p>
+  </section>
+
+  <section class="identify">
+    <h2>Identificar Planta</h2>
+    <div class="identify-row">
+      <input type="file" id="photoInput" accept="image/*">
+      <button id="identifyBtn">Identificar</button>
+    </div>
+    <div id="identifyResult" class="identify-result">
+      <p class="muted">Envie uma foto para identificar.</p>
+    </div>
+    <p class="small">Fallback: tentativa simulada → busca pública.</p>
+  </section>
+
+  <section class="catalog">
+    <h2>Catálogo de Plantas</h2>
+    <div id="plantsGrid" class="plants-grid"></div>
+  </section>
+
+  <section class="care">
+    <h2>Registrar Cuidado</h2>
+    <label for="plantName">Nome da planta</label>
+    <input id="plantName" placeholder="Ex: Manjericão, Suculenta">
+
+    <label for="action">Ação</label>
+    <select id="action">
+      <option value="rega">💧 Regar</option>
+      <option value="adubo">🌾 Adubar</option>
+      <option value="poda">✂️ Podar</option>
+    </select>
+
+    <label for="time">Hora</label>
+    <input id="time" type="time">
+    <button id="addRecord">Registrar</button>
+
+    <div id="log" class="log"></div>
+  </section>
+
+  <section class="stats">
+    <h2>Resumo de Cuidados</h2>
+    <canvas id="chart"></canvas>
+  </section>
+
+  <section class="lifecycle">
+    <h2>Ciclo de Vida (exemplos)</h2>
+    <div class="life-grid" id="lifeGrid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Meu Jardim Inteligente — Projeto extensionista</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
