@@ -42,7 +42,26 @@
       margin-top: 10px;
       color: #2e7d32;
     }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
   </style>
+  <script>
+    function voltar() {
+      window.history.back();
+    }
+  </script>
 </head>
 <body>
 
@@ -52,7 +71,7 @@
 
   <div class="plantas">
     <div class="planta">
-      <img src="https://img.freepik.com/vetores-gratis/orquidea-na-cor-roxa_1308-70847.jpg?w=740&q=80" alt="Orquídea">
+      <img src="https://img.freepik.com/vetores-gratis/orquidea-na-cor-roxa_1308-70847.jpg?semt=ais_hybrid&w=740&q=80" alt="Orquídea">
       <h3>Orquídea</h3>
     </div>
 
@@ -71,6 +90,8 @@
       <h3>Suculenta</h3>
     </div>
   </div>
+
+  <button onclick="voltar()">← Voltar</button>
 
 </body>
 </html>
